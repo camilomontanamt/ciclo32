@@ -40,13 +40,13 @@ public class ReservationRestController {
 	@PostMapping("/save")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Reservation create(@RequestBody Reservation reservation) {	
-		return reservationServices.saveCategory(reservation);
+		return reservationServices.saveReservation(reservation);
 	}
 	
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Integer idReservation) {
-		reservationServices.deleteCategory(idReservation);
+		reservationServices.deleteReservation(idReservation);
 	}
 
 }

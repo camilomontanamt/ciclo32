@@ -32,7 +32,7 @@ public class ReservationServices {
 	}
 
 	@Transactional
-	public Reservation saveCategory(Reservation reservation) {
+	public Reservation saveReservation(Reservation reservation) {
 		if (reservation.getIdReservation() == null) {
 			return reservationDao.save(reservation);			
 		} else {
@@ -46,7 +46,7 @@ public class ReservationServices {
 	}
 
 	@Transactional
-	public void deleteCategory(Integer idReservation) {
+	public void deleteReservation(Integer idReservation) {
 		reservationDao.deleteById(idReservation);
 	}
 

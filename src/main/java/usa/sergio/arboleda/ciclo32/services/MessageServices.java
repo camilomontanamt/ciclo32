@@ -32,7 +32,7 @@ public class MessageServices {
 	}
 
 	@Transactional
-	public Message saveCategory(Message message) {
+	public Message saveMessage(Message message) {
 		if (message.getIdMessage() == null) {
 			return messagueDao.save(message);			
 		} else {
@@ -46,7 +46,7 @@ public class MessageServices {
 	}
 
 	@Transactional
-	public void deleteCategory(Integer idMessage) {
+	public void deleteMessage(Integer idMessage) {
 		messagueDao.deleteById(idMessage);
 	}
 

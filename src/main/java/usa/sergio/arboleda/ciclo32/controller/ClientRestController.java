@@ -40,12 +40,12 @@ public class ClientRestController {
 	@PostMapping("/save")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Client create(@RequestBody Client client) {	
-		return clientServices.saveCategory(client);
+		return clientServices.saveClient(client);
 	}
 	
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Integer idClient) {
-		clientServices.deleteCategory(idClient);
+		clientServices.deleteClient(idClient);
 	}
 }

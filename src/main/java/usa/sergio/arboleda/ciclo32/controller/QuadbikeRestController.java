@@ -44,12 +44,12 @@ public class QuadbikeRestController {
 	@PostMapping("/save")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Quadbike create(@RequestBody Quadbike quadbike) {
-		return quadbikeService.save(quadbike);
+		return quadbikeService.saveQuadbike(quadbike);
 	}
 	
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Integer id){
-		quadbikeService.delete(id);
+		quadbikeService.deleteQuadbike(id);
 	}
 }

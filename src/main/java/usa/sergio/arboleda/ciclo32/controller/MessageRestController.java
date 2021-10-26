@@ -37,13 +37,13 @@ public class MessageRestController {
 	@PostMapping("/save")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Message create(@RequestBody Message message) {	
-		return messageServices.saveCategory(message);
+		return messageServices.saveMessage(message);
 	}
 	
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Integer idMessage) {
-		messageServices.deleteCategory(idMessage);
+		messageServices.deleteMessage(idMessage);
 	}
 
 }

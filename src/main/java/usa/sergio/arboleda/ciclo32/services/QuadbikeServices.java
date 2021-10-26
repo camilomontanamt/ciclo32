@@ -32,7 +32,7 @@ public class QuadbikeServices {
 	}
 	
 	@Transactional
-	public Quadbike save(Quadbike quadbike) {
+	public Quadbike saveQuadbike(Quadbike quadbike) {
 		if (quadbike.getId() == null) {
 			return quadbikeDao.save(quadbike);			
 		} else {
@@ -46,7 +46,7 @@ public class QuadbikeServices {
 	}
 	
 	@Transactional
-	public void delete(Integer id) {
+	public void deleteQuadbike(Integer id) {
 		quadbikeDao.deleteById(id);
 	}
 }

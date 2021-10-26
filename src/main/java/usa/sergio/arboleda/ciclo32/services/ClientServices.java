@@ -32,7 +32,7 @@ public class ClientServices {
 	}
 
 	@Transactional
-	public Client saveCategory(Client client) {
+	public Client saveClient(Client client) {
 		if (client.getIdClient() == null) {
 			return clientDao.save(client);			
 		} else {
@@ -46,7 +46,7 @@ public class ClientServices {
 	}
 
 	@Transactional
-	public void deleteCategory(Integer idClient) {
+	public void deleteClient(Integer idClient) {
 		clientDao.deleteById(idClient);
 	}
 	
