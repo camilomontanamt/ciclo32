@@ -25,6 +25,8 @@ public class Reservation implements Serializable{
 	
 	private Date devolutionDate;
 	
+	private String status;
+	
 	@ManyToOne
 	@JoinColumn(name="quadbikeId")
 	@JsonIgnoreProperties({"messages", "reservations"})
@@ -60,7 +62,15 @@ public class Reservation implements Serializable{
 	public void setDevolutionDate(Date devolutionDate) {
 		this.devolutionDate = devolutionDate;
 	}
-	
+		
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	public Client getClient() {
 		return client;
 	}
