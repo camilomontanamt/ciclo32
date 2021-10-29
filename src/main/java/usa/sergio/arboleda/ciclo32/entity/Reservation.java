@@ -10,8 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -23,10 +21,8 @@ public class Reservation implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idReservation;
 	
-	@Temporal(TemporalType.DATE)
 	private Date startDate;
 	
-	@Temporal(TemporalType.DATE)
 	private Date devolutionDate;
 	
 	@ManyToOne
