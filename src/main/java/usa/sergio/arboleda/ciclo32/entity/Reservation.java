@@ -1,14 +1,17 @@
 package usa.sergio.arboleda.ciclo32.entity;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -31,10 +34,14 @@ public class Reservation implements Serializable{
 	@JoinColumn(name="quadbikeId")
 	@JsonIgnoreProperties({"messages", "reservations"})
 	private Quadbike quadbike;
+	
+	@OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "quadbike")
+	@JsonIgnoreProperties({"quadbike", "client"})
+	private List<Message> messages;
 
 	@ManyToOne
 	@JoinColumn(name="clientId")
-	@JsonIgnoreProperties({"messages", "reservations"})
+	@JsonIgnoreProperties({"messages", "reservation"})
 	private Client client;
 	
 	private String score;
@@ -85,6 +92,14 @@ public class Reservation implements Serializable{
 	
 	public void setQuadbike(Quadbike quadbike) {
 		this.quadbike = quadbike;
+	}
+	
+	public List<Message> getMessages() {
+		return messages;
+	}
+
+	public void setMessages(List<Message> messages) {
+		this.messages = messages;
 	}
 
 	public String getScore() {
